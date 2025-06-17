@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{%block title %}
+<title>Employee</title>
+{% endblock %}
+{% block content %}
+<h1 class="text-center">Empoyee List</h1>
+<div class="container">
+<table class="table bg-light border border-solid border-danger ">
+  <thead>
+    <tr>
+
+      <th>Emp_Name</th>
+      <th>Age</th>
+      <th>Salary</th>
+        <th >Designation</th>
+        <th >Place</th>
+        <th>Department_Name</th>
+        <th>Image</th>
+    </tr>
+  </thead>
+    {% for e in emp %}
+    <tbody>
+    <tr>
+
+      <td>{{e.name}}</td>
+      <td>{{e.age}}</td>
+      <td>{{e.salary}}</td>
+        <td>{{e.designation}}</td>
+        <td>{{e.place}}</td>
+        <td>{{e.department_name}}</td>
+        <td><img src="{{e.image.url}}" height="150" width="150"></td>
+      <td><a class="btn btn-dark me-3" href="{% url 'details' e.id %}">  Detail</a><a class="btn btn-dark me-3" href="{% url 'edit' e.id %}">Edit</a><a class="btn btn-dark me-3" href="{% url 'delete' e.id %}" >Delete</a> </td>
+    </tr>
+  {% endfor %}
+</table>
+</div>
+{% endblock %}

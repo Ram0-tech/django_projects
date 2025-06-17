@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title%}
+<title>Vehicle</title>
+{% endblock %}
+{% block content %}
+<h1 style="color:#034014;text-align:center;text-decoration:bold;">Vehicle List</h1>
+<div class="row mt-3">
+{% for v in vehicle %}
+<div class="col-4 container">
+<div class="card mx-auto" style="width: 18rem;">
+
+  <img src="{{v.Image.url}}"  class="card-img-top" alt="...">
+
+  <div class="card-body ">
+    <h5 class="card-title text-success text-center">{{v.Vehicle_Name}}</h5>
+    <h5 class="card-title">Brand:{{v.Brand}}</h5>
+    <h5 class="card-title">Color:{{v.Color}}</h5>
+    <h5 class="card-title">Milage:{{v.Milage}}</h5>
+
+
+</div>
+  </div>
+</div>
+
+{% endfor %}
+</div>
+{% endblock %}

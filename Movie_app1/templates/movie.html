@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title%}
+<title>Home</title>
+<style>
+  p{min-height:none;}
+</style>
+{% endblock %}
+{% block c %}
+<h1 style="color:#034014;text-align:center;text-decoration:bold;">Movie List</h1>
+<div class="row mt-3">
+{% for m in movie %}
+<div class="col-4 container">
+<div class="card mx-auto" style="width: 18rem;">
+
+  <img src="{{m.image.url}}"  class="card-img-top" alt="...">
+
+  <div class="card-body ">
+    <h5 class="card-title text-success text-center">{{m.movie_name}}</h5>
+    <h5 class="card-title">Language:{{m.language}}</h5>
+    <h5 class="card-title">Director:{{m.director}}</h5>
+    <h5 class="card-title">Year:{{m.year}}</h5>
+
+    <div class="text-center mt-auto">
+    <a  class="btn btn-primary " href="{% url 'details' m.id %} ">Details</a>
+  </div>
+</div>
+  </div>
+</div>
+
+{% endfor %}
+</div>
+
+
+{% endblock %}

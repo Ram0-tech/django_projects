@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title%}
+<title>Details</title>
+<style>
+  p{min-height:none;}
+</style>
+{% endblock %}
+{% block c %}
+<h1 style="color:#034014;text-align:center;text-decoration:bold;">Details</h1>
+<div class="row mt-3">
+<div class="col-4 container">
+
+  <div class="card mb-3" style="max-width: 800px; min-height:360px">
+  <div class="row g-0">
+        <div class="col-md-4 movie-poster">
+            <img src="{{movie.image.url}}" class="img-fluid rounded " style="object-fit: cover;" alt="...">
+          </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{movie.movie_name}}</h5>
+        <h5 class="card-title">Language:{{movie.language}}</h5>
+    <h5 class="card-title">Director:{{movie.director}}</h5>
+    <h5 class="card-title">Year:{{movie.year}}</h5>
+        <p class="card-text">{{movie.description}}</p>
+         <a  class="btn btn-primary me-3" href="{% url 'edit' movie.id %}">Edit</a><a  class="btn btn-primary me-3" href="{% url 'delete' movie.id %}">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+{% endblock %}

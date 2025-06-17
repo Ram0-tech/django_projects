@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+
+{%block title %}
+<title>Details</title>
+{% endblock %}
+{% block content %}
+<h1 class="text-center">Empoyee Details</h1>
+<div class="container">
+<table class="table bg-light border border-solid border-danger ">
+  <thead>
+    <tr>
+
+      <th>Emp_Name</th>
+      <th>Age</th>
+      <th>Salary</th>
+        <th >Designation</th>
+        <th >Place</th>
+        <th>Department_Name</th>
+        <th>Image</th>
+    </tr>
+  </thead>
+
+    <tbody>
+    <tr>
+
+      <td>{{emp.name}}</td>
+      <td>{{emp.age}}</td>
+      <td>{{emp.salary}}</td>
+        <td>{{emp.designation}}</td>
+        <td>{{emp.place}}</td>
+        <td>{{emp.department_name}}</td>
+        <td><img src="{{emp.image.url}}" height="150" width="150"></td>
+    </tr>
+</table>
+</div>
+{% endblock %}

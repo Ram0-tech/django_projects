@@ -1,0 +1,9 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags%}
+{% block title%}
+<title>student</title>
+{% endblock %}
+{% block c %}
+<h3 class="text-primary text-center">Student Home</h3>
+<a href="{% url 'logout' %}">Logout</a>
+{% endblock %}

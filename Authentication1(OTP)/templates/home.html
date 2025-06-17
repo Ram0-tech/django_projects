@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% block title%}
+<title>Home</title>
+{% endblock %}
+{% block c %}
+<h1 class="text-center text-warning">Welcome
+    {% if user.is_authenticated %} <!-- if loggined user -->
+    {{user.username}}
+    <a href="{% url 'password_change' %}">Change Password</a>
+    <a href="{% url 'signout' %}">Logout</a>
+{% else %}
+Guest
+{% endif %}</h1>
+<a href="{% url 'signup' %}">SignUp</a>
+<a href="{% url 'signin' %}">Login</a>
+
+{% endblock %}
